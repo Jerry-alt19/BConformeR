@@ -4,7 +4,7 @@
   <a href="https://github.com/Jerry-alt19/BConformeR/blob/main/LICENSE"> 
     <img src="https://img.shields.io/badge/license-MIT-informational"> 
   </a> 
-  <a href="https://pytorch.org/"> 
+  <a href="https://github.com/pytorch/pytorch"> 
     <img src="https://img.shields.io/badge/framework-PyTorch-informational"> 
   </a> 
   <a href="https://github.com/Jerry-alt19/BConformeR"> 
