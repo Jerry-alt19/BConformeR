@@ -37,6 +37,7 @@ conda activate bconformer
 
 ### 3. Install dependencies:
 ```bash
+conda install -c pytorch pytorch torchvision
 pip install -r requirements.txt
 ```
 
