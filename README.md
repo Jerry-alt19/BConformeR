@@ -1,4 +1,6 @@
-# BConformeR: A Conformer Based on Mutual Sampling for Unified Prediction of Continuous and Discontinuous Antibody Binding Sites
+<h1 align="center">
+BConformeR: A Conformer Based on Mutual Sampling for Unified Prediction of Continuous and Discontinuous Antibody Binding Sites
+</h1>
 
 <p align="center"> 
   <a href="https://github.com/Jerry-alt19/BConformeR/blob/main/LICENSE"> 
