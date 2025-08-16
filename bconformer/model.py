@@ -1,5 +1,7 @@
 """
 This file was modified based on Conformer (2021)
+
+Modifications include updated parameters and the final classifiers, mainly in the Conformer class.
 """
 import torch
 import numpy as np
