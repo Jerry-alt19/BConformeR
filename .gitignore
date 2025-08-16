@@ -1,0 +1,14 @@
+# Ignore large files, models, and temporary files
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.pdb
+*.log
+
+# Ignore PyCharm metadata
+.idea/
+__pycache__/
+
+
