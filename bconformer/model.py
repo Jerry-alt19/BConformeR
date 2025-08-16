@@ -323,7 +323,7 @@ class ConvTransBlock(nn.Module):
 
 
 class Conformer(nn.Module):
-    def __init__(self, patch_size=16, in_chans=1280, num_classes=2, base_channel=320, channel_ratio=2,
+    def __init__(self, patch_size=1, in_chans=1280, num_classes=2, base_channel=320, channel_ratio=2,
                  num_med_block=0, embed_dim=1536, depth=12, num_heads=12, mlp_ratio=2., qkv_bias=False,
                  qk_scale=None, drop_rate=0., attn_drop_rate=0., drop_path_rate=0., fusion_alpha=0.5):
         super().__init__()
