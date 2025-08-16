@@ -5,27 +5,43 @@ import csv
 import argparse
 from bconformer.model import Conformer
 
-def read_fasta(fasta_path):
+
+def read_fasta(fasta_path, max_len=1024):
     """
     Read sequences from a FASTA file.
     Returns a dictionary {sequence_id: sequence}
     """
     sequences = {}
-    with open(fasta_path, "r") as f:
-        seq_id, seq = None, []
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            if line.startswith(">"):
-                if seq_id is not None:
-                    sequences[seq_id] = "".join(seq)
-                seq_id = line[1:].split()[0]  # take the first token after ">"
-                seq = []
-            else:
-                seq.append(line)
-        if seq_id is not None:
-            sequences[seq_id] = "".join(seq)
+    try:
+        with open(fasta_path, "r") as f:
+            seq_id, seq = None, []
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                if line.startswith(">"):
+                    if seq_id is not None:
+                        sequences[seq_id] = "".join(seq)
+                    seq_id = line[1:].split()[0]  # take the first token after ">"
+                    seq = []
+                else:
+                    seq.append(line)
+            if seq_id is not None:
+                sequences[seq_id] = "".join(seq)
+    except Exception as e:
+        raise ValueError(f"Error reading FASTA file: {e}\n"
+                         f"Please make sure the format follows example.fasta")
+
+    if not sequences:
+        raise ValueError(f"No sequences found in {fasta_path}. "
+                         f"Please check the format (see example.fasta).")
+
+    # check sequence length
+    for sid, seq in sequences.items():
+        if len(seq) > max_len:
+            raise ValueError(f"Sequence {sid} has length {len(seq)}, "
+                             f"which exceeds the maximum supported length {max_len}.")
+
     return sequences
 
 
@@ -90,10 +106,11 @@ def main():
     model.eval()
 
     # === Read FASTA and run predictions ===
-    sequences = read_fasta(args.fasta)
+    sequences = read_fasta(args.fasta, max_len=1024)
     for seq_id, seq in sequences.items():
         predict_epitopes(seq_id, seq, model, esm_model, esm_alphabet, device, args.threshold, args.out_dir)
 
 
 if __name__ == "__main__":
     main()
+
