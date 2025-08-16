@@ -34,7 +34,7 @@ python predict.py --fasta example.fasta --out_dir predictions
 #### Arguments
 
 ```bash
---fasta       (str, required)   Path to the input FASTA file containing protein sequences.
+--fasta       (str, required)   Path to the input FASTA file containing antigen sequences.
 --out_dir     (str, optional)   Directory where CSV prediction files will be saved. Default: "predictions"
 --threshold   (float, optional) Probability threshold to determine if a residue is an epitope. Default: 0.3
 --model_path  (str, optional)   Path to the trained Conformer model. Default: "src/model/bconformer_1.pth"
