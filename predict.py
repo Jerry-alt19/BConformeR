@@ -2,6 +2,7 @@ import torch
 import esm
 import os
 import csv
+import argparse
 from bconformer.model import Conformer
 
 def read_fasta(fasta_path):
@@ -66,10 +67,13 @@ def predict_epitopes(seq_id, sequence, model, esm_model, esm_alphabet, device, t
     print(f"[OK] {seq_id} → {csv_path}")
 
 
-if __name__ == "__main__":
-    fasta_file = "example.fasta"   # input FASTA file
-    out_dir = "predictions"         # output directory for CSV files
-    threshold = 0.3         # change the threshold to get a good result 😎😎😎
+def main():
+    parser = argparse.ArgumentParser(description="Predict per-residue epitope scores from a FASTA file.")
+    parser.add_argument("--fasta", type=str, required=True, help="Path to the input FASTA file.")
+    parser.add_argument("--out_dir", type=str, default="predictions", help="Output directory for CSV files.")
+    parser.add_argument("--threshold", type=float, default=0.25, help="Threshold for epitope prediction (default: 0.25).")
+    parser.add_argument("--model_path", type=str, default="src/model/bconformer_1.pth", help="Path to trained Conformer model.")
+    args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -78,16 +82,18 @@ if __name__ == "__main__":
     esm_model = esm_model.to(device)
     esm_model.eval()
 
-    # === Load trained Conformer ===
-    model_name = "bconformer_1.pth"
-    model_path = os.path.join("src/model", model_name)
+    # === Load trained Conformer model ===
     model = Conformer(in_chans=1280, num_classes=2)
-    state = torch.load(model_path, map_location=device, weights_only=False)
+    state = torch.load(args.model_path, map_location=device, weights_only=False)
     model.load_state_dict(state)
     model.to(device)
     model.eval()
 
     # === Read FASTA and run predictions ===
-    sequences = read_fasta(fasta_file)
+    sequences = read_fasta(args.fasta)
     for seq_id, seq in sequences.items():
-        predict_epitopes(seq_id, seq, model, esm_model, esm_alphabet, device, threshold, out_dir)
+        predict_epitopes(seq_id, seq, model, esm_model, esm_alphabet, device, args.threshold, args.out_dir)
+
+
+if __name__ == "__main__":
+    main()
