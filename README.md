@@ -11,6 +11,7 @@ Accurate prediction of antibody-binding sites (epitopes) on antigens is crucial 
 ```bash
 git clone https://github.com/Jerry-alt19/BConformeR.git
 cd BConformeR
+```
 
 2. Install dependencies:
 
@@ -18,3 +19,9 @@ cd BConformeR
 conda create -n bconformer python=3.9
 conda activate bconformer
 pip install -r requirements.txt
+```
+
+3. Run prediction
+```bash
+python predict_epitopes.py --fasta example.fasta --out_dir predictions
+```
