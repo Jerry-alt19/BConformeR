@@ -71,7 +71,7 @@ def main():
     parser = argparse.ArgumentParser(description="Predict per-residue epitope scores from a FASTA file.")
     parser.add_argument("--fasta", type=str, required=True, help="Path to the input FASTA file.")
     parser.add_argument("--out_dir", type=str, default="predictions", help="Output directory for CSV files.")
-    parser.add_argument("--threshold", type=float, default=0.25, help="Threshold for epitope prediction (default: 0.25).")
+    parser.add_argument("--threshold", type=float, default=0.30, help="Threshold for epitope prediction (default: 0.25).")
     parser.add_argument("--model_path", type=str, default="src/model/bconformer_1.pth", help="Path to trained Conformer model.")
     args = parser.parse_args()
 
