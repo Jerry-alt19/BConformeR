@@ -87,8 +87,19 @@ To run BConformeR from scratch, the following hardware and GPU configurations ar
 
 ## Citation
 
-If you use or refer to our work, please cite it as:
+If you use or refer to this work, please cite our paper:
 
+
+The Conformer architecture is cited as:
+```text
+@inproceedings{peng2021conformer,
+  title={Conformer: Local features coupling global representations for visual recognition},
+  author={Peng, Zhiliang and Huang, Wei and Gu, Shanzhi and Xie, Lingxi and Wang, Yaowei and Jiao, Jianbin and Ye, Qixiang},
+  booktitle={Proceedings of the IEEE/CVF international conference on computer vision},
+  pages={367--376},
+  year={2021}
+}
+```
 
 ## License
 
