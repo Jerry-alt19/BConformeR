@@ -31,7 +31,7 @@ pip install -r requirements.txt
 python predict.py --fasta example.fasta --out_dir predictions
 ```
 
-### Arguments
+#### Arguments
 
 ```bash
 --fasta       (str, required)   Path to the input FASTA file containing protein sequences.
@@ -45,13 +45,13 @@ python predict.py --fasta example.fasta --out_dir predictions
 
 To run BConformeR from scratch, the following hardware and GPU configurations are recommended:
 
-### Hardware
+### 1. Hardware
 - GPU: NVIDIA A100-SXM4 40GB or equivalent
 - Memory: ≥ 40GB GPU memory
 - Disk space: ≥ 50GB free
 - CUDA-enabled GPU for GPU acceleration
 
-### GPU Setup
+### 2. GPU Setup
 ```text
 GPU  Name                     Memory
 0    NVIDIA A100-SXK4-40GB     40GB
