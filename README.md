@@ -40,6 +40,17 @@ python predict.py --fasta example.fasta --out_dir predictions
 --model_path  (str, optional)   Path to the trained Conformer model. Default: "src/model/bconformer_1.pth"
 ```
 
+#### Output
+
+For each antigen sequence in the FASTA file, a CSV file is generated in the specified `--out_dir` directory. Each CSV file is named `<sequence_id>.csv` and contains the following columns:
+
+| Column | Description |
+|--------|-------------|
+| Index  | Residue position in the sequence (starting from 1) |
+| Residue | Amino acid at the given position |
+| Score  | Predicted epitope probability (from 0 to 1) |
+| Predicted Label | 1 if `Score >= threshold`, otherwise 0 |
+
 
 ## Systems
 
