@@ -63,13 +63,13 @@ To run BConformeR from scratch, the following hardware and GPU configurations ar
 - CUDA-enabled GPU for GPU acceleration
 
 ### 2. GPU Setup
-```text
-GPU  Name                     Memory
-0    NVIDIA A100-SXK4-40GB     40GB
-1    NVIDIA A100-SXM4-40GB     40GB
-2    NVIDIA A100-SXM4-40GB     40GB
-3    NVIDIA A100-SXM4-40GB     40GB
-```
+
+| GPU | Name                     | Memory |
+|-----|--------------------------|--------|
+| 0   | NVIDIA A100-SXK4-40GB    | 40GB   |
+| 1   | NVIDIA A100-SXM4-40GB    | 40GB   |
+| 2   | NVIDIA A100-SXM4-40GB    | 40GB   |
+| 3   | NVIDIA A100-SXM4-40GB    | 40GB   |
 
 ## Citation
 
