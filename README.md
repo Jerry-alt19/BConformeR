@@ -92,7 +92,7 @@ Data was collected from [**AbEpiTope-1.0**](https://services.healthtech.dtu.dk/s
 
 ## Citation
 
-If you use or refer to this work, please cite our paper:
+If you find this work useful, please cite our paper:
 
 
 The Conformer architecture is cited as:
