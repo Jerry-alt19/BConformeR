@@ -87,7 +87,7 @@ To run BConformeR from scratch, the following hardware and GPU configurations ar
 
 
 ## Dataset
-Dataset used in this project is obtained from [**AbEpiTope 1.0**](https://services.healthtech.dtu.dk/services/AbEpiTope-1.0/).
+Dataset used in this project is obtained from [**AbEpiTope-1.0**](https://services.healthtech.dtu.dk/services/AbEpiTope-1.0/).
 
 
 ## Citation
