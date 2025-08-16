@@ -1,6 +1,3 @@
-"""
-This file referred to Conformer (2021)
-"""
 import math
 import sys
 import utils
