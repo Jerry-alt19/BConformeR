@@ -13,15 +13,28 @@ git clone https://github.com/Jerry-alt19/BConformeR.git
 cd BConformeR
 ```
 
-2. Install dependencies:
-
+2. Create and activate a conda environment:
 ```bash
 conda create -n bconformer python=3.9
 conda activate bconformer
+```
+
+3. Install dependencies:
+```bash
 pip install -r requirements.txt
 ```
 
-3. Run prediction
+4. Run prediction
 ```bash
-python predict_epitopes.py --fasta example.fasta --out_dir predictions
+python predict.py --fasta example.fasta --out_dir predictions
 ```
+
+### Arguments
+
+```bash
+--fasta       (str, required)   Path to the input FASTA file containing protein sequences.
+--out_dir     (str, optional)   Directory where CSV prediction files will be saved. Default: "predictions"
+--threshold   (float, optional) Probability threshold to determine if a residue is an epitope. Default: 0.3
+--model_path  (str, optional)   Path to the trained Conformer model. Default: "src/model/bconformer_1.pth"
+```
+
