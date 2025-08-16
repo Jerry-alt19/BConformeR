@@ -5,8 +5,16 @@ Accurate prediction of antibody-binding sites (epitopes) on antigens is crucial 
 ![Figure 1](./fig/overview.png)
 
 ## Installation
-```bash
-git clone https://github.com/username/BConformeR.git
-cd BConformeR
-pip install -r requirements.txt
 
+1. Clone this repository:
+
+```bash
+git clone https://github.com/Jerry-alt19/BConformeR.git
+cd BConformeR
+
+2. Install dependencies:
+
+```bash
+conda create -n bconformer python=3.9
+conda activate bconformer
+pip install -r requirements.txt
