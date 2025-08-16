@@ -26,7 +26,7 @@ conda activate bconformer
 pip install -r requirements.txt
 ```
 
-### 4. Run prediction
+### 4. Run prediction:
 ```bash
 python predict.py --fasta example.fasta --out_dir predictions
 ```
