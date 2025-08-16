@@ -75,3 +75,9 @@ To run BConformeR from scratch, the following hardware and GPU configurations ar
 
 If you use or refer to our work, please cite it as:
 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
